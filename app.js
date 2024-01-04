@@ -7,10 +7,7 @@ const login = async (user) => {
   await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36');
   await page.setViewport({ width: 1920, height: 1080 });
 
-  let loginPage = await page.goto('https://meroshare.cdsc.com.np/#/login');
-  if(loginPage.status() != 404){
-    console.log("status: ok");
-  }
+  await page.goto('https://meroshare.cdsc.com.np/#/login');
   await page.waitForSelector('.sign-in');
 
   const selectDp = await page.$('.select2-selection__placeholder');
@@ -37,7 +34,12 @@ const login = async (user) => {
     await signIn.click();
   }
 
-  await page.waitForSelector('.user-profile-role');
+  await page.waitForSelector('.msi-asba');
+  const asba = await page.$('.msi-asba');
+  if(asba) { 
+    await asba.click();
+  }
+
   await page.screenshot({ path: `${user.username}_debug.png` });
 
   browser.close();
