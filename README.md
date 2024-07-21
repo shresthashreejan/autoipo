@@ -1,4 +1,4 @@
-# AutoIPO
+# AUTOIPO
 
 This script automates logging into Meroshare and applying for IPOs or FPOs for lazy people (like me).
 
