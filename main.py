@@ -63,6 +63,8 @@ def main():
                                         proceed_button.click()
                                         page.locator('#transactionPIN').fill(user['pin'])
                                         page.wait_for_selector('.confirm-page-btn .btn-primary').click()
+                                        username = user['username']
+                                        print(f"Applied for {username}.")
                             else:
                                 print(f"No new IPO or FPO found.")
 
