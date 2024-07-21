@@ -1,0 +1,25 @@
+{
+    "users": [
+        {
+            "dp": "user01_depository_participants_value",
+            "username": "user01_username",
+            "password": "user01_password",
+            "crn": "user01_crn",
+            "pin": "user01_transaction_pin"
+        },
+        {
+            "dp": "user02_depository_participants_value",
+            "username": "user02_username",
+            "password": "user02_password",
+            "crn": "user02_crn",
+            "pin": "user02_transaction_pin"
+        },
+        {
+            "dp": "user03_depository_participants_value",
+            "username": "user03_username",
+            "password": "user03_password",
+            "crn": "user03_crn",
+            "pin": "user03_transaction_pin"
+        }
+    ]
+}
