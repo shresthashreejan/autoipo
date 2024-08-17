@@ -11,7 +11,7 @@ def main():
     with sync_playwright() as p:
         try:
             for user in users:
-                browser = p.chromium.launch(headless=False, slow_mo=500)
+                browser = p.chromium.launch(headless=False, slow_mo=100)
                 page = browser.new_page()
 
                 try:
@@ -31,7 +31,7 @@ def main():
                     # Check and apply for any new IPO or FPO
                     try:
                         company_lists = page.query_selector_all('.company-list')
-                    except playwright.Error as e:
+                    except Exception as e:
                         company_lists = []
                         print(f"No new IPO or FPO found.")
                     
@@ -68,9 +68,6 @@ def main():
                             else:
                                 print(f"No new IPO or FPO found.")
 
-                except playwright.Error as e:
-                    print(f"Playwright error: {e}")
-
                 except Exception as e:
                     print(f"Exception occurred: {str(e)}")
 
@@ -78,12 +75,8 @@ def main():
                     page.close()
                     browser.close()
 
-        except playwright.Error as e:
-            print(f"Playwright error: {e}")
-
         except Exception as e:
             print(f"Exception occurred: {str(e)}")
-
 
 if __name__ == "__main__":
     main()
