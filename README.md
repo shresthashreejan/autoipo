@@ -31,6 +31,7 @@ This script automates logging into Meroshare and applying for IPOs or FPOs for l
     {
         "users": [
             {
+                "name": "user01",
                 "dp": "user01_depository_participants_value",
                 "username": "user01_username",
                 "password": "user01_password",
@@ -38,6 +39,7 @@ This script automates logging into Meroshare and applying for IPOs or FPOs for l
                 "pin": "user01_transaction_pin"
             },
             {
+                "name": "user02",
                 "dp": "user02_depository_participants_value",
                 "username": "user02_username",
                 "password": "user02_password",
@@ -45,6 +47,7 @@ This script automates logging into Meroshare and applying for IPOs or FPOs for l
                 "pin": "user02_transaction_pin"
             },
             {
+                "name": "user03",
                 "dp": "user03_depository_participants_value",
                 "username": "user03_username",
                 "password": "user03_password",

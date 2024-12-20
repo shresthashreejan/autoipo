@@ -1,4 +1,5 @@
 import json
+import time
 from playwright.sync_api import sync_playwright
 
 def main():
@@ -27,6 +28,7 @@ def main():
 
                     # Navigate to My ASBA 
                     page.wait_for_selector('.msi-asba').click()
+                    time.sleep(2)
 
                     # Check and apply for any new IPO or FPO
                     try:
