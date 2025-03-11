@@ -49,7 +49,7 @@ def main():
                                     apply_button = company_list.query_selector('xpath=//div[contains(@class, "action-buttons")]//button[contains(@class, "btn-issue") and .//i[contains(text(), "Apply")]]')
                                     if apply_button:
                                         apply_button.click()
-
+                                        time.sleep(2)
                                         # Fill application form
                                         form_group = page.query_selector('.form-group:has-text("Minimum Quantity")')
                                         minimum_quantity_value = 0
