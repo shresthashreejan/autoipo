@@ -43,7 +43,7 @@ def main():
                         share_of_type_element = company_list.query_selector('.share-of-type')
                         if share_of_type_element:
                             share_of_type_text = share_of_type_element.inner_text().strip()
-                            if share_of_type_text in ['IPO', 'FPO']:
+                            if share_of_type_text in ['IPO', 'FPO', 'RESERVED']:
                                 isin_element = company_list.query_selector('.isin')
                                 if isin_element and isin_element.get_attribute('tooltip') == 'Share Group' and isin_element.inner_text().strip() == 'Ordinary Shares':
                                     apply_button = company_list.query_selector('xpath=//div[contains(@class, "action-buttons")]//button[contains(@class, "btn-issue") and .//i[contains(text(), "Apply")]]')
