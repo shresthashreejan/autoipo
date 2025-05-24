@@ -76,8 +76,6 @@ def main():
                                         print(f"Already applied for {name} ({username}).")
                             else:
                                 print(f"No new IPO or FPO found.")
-                        else:
-                            print(f"No new IPO or FPO found.")
 
                 except Exception as e:
                     print(f"Exception occurred: {str(e)}")
