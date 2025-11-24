@@ -109,7 +109,7 @@ def process_user(p, user, first_run=False):
         browser.close()
 
 def main():
-    with open("credentials.json", "r") as f:
+    with open("userdata.json", "r") as f:
         data = json.load(f)
 
     users = data["users"]
