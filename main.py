@@ -1,5 +1,4 @@
 import json
-import time
 from playwright.sync_api import sync_playwright, TimeoutError
 
 def login(page, user):
@@ -71,7 +70,7 @@ def apply_for_company(page, user):
     return True
 
 
-def process_user(p, user, first_run=False):
+def process_user(p, user):
     username = user["username"]
     name = user["name"]
 
