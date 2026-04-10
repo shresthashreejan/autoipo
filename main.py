@@ -63,7 +63,7 @@ def apply_for_company(page, user):
     page.fill("#crnNumber", user["crn"])
     page.click("#disclaimer")
 
-    page.locator(".card-footer button.btn-primary").click()
+    page.get_by_role("button", name="Proceed").click()
     page.fill("#transactionPIN", user["pin"])
     page.locator(".confirm-page-btn .btn-primary").click()
 
