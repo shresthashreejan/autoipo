@@ -53,8 +53,8 @@ def apply_for_company(page, user):
     except TimeoutError:
         return False
 
-    page.wait_for_selector(".form-group:has-text('Minimum Quantity')")
-    min_qty_el = page.locator('.form-group:has-text("Minimum Quantity") .form-value span')
+    page.wait_for_selector("xpath=//label[normalize-space()='Minimum Quantity']/following-sibling::div//span")
+    min_qty_el = page.locator("xpath=//label[normalize-space()='Minimum Quantity']/following-sibling::div//span")
     min_qty = min_qty_el.inner_text().strip()
 
     page.select_option("#selectBank", index=1)
@@ -66,6 +66,8 @@ def apply_for_company(page, user):
     page.get_by_role("button", name="Proceed").click()
     page.fill("#transactionPIN", user["pin"])
     page.locator(".confirm-page-btn .btn-primary").click()
+
+    page.wait_for_selector(".company-list", timeout=5000)
 
     return True
 
